@@ -116,9 +116,6 @@
     align-items: center;
     margin-left: 30px;
   }
-  &__watch::before {
-    display: none;
-  }
   &__download {
     display: flex;
     padding: 18px 27px 17px 27px;
@@ -193,5 +190,3 @@
     }
   }
 }
-
-
