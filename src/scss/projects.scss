@@ -1,0 +1,182 @@
+@use "sass:math";
+@import "calculation";
+@import "general";
+
+.projects {
+  padding: 120px 0;
+  position: relative;
+  overflow: hidden;
+
+  &__title {
+    @media (max-width: $tablet){
+      margin-bottom: 40px;
+    }
+    position: relative;
+    margin-bottom: 80px;
+    &::after {
+      @media (max-width: $mobile){
+        display: none;
+      }
+      @media (max-width: $tablet){
+        width: 150px;
+      }
+      position: absolute;
+      content: '';
+      width: 200px;
+      height: 1px;
+      background: #8D9AA5;
+      top: 12px;
+      left: 230px;
+    }
+  }
+  &__wrapper {
+    @media (max-width: $tablet){
+      flex-direction: column-reverse;
+    }
+    display: flex;
+    justify-content: space-between;
+    gap: calc(5px + (40 - 5) * ((100vw - 992px) / (1470 - 992)));
+  }
+  &__image img {
+    @media (max-width: $tablet){
+      height: 100%;
+    }
+    max-width: 100%;
+    height: 806px;
+    object-fit: cover;
+  }
+  &__image {
+    flex: 0 0 56%; 
+    width: 100%;
+    height: 100%;
+    position: relative;
+    
+    &::before {
+      position: absolute;
+      content: '';
+      z-index: 3;
+      top: 59%;
+      left: 18%;
+      width: 119px;
+      height: 119px;
+      background-color: rgb(249, 249, 250, 0.2);
+      background-image: url(../img/magnifying_glass_plus.svg);
+      background-repeat: no-repeat;
+      background-position: center;
+    }
+  }
+  &__content {
+    flex: 1 1 auto; 
+    padding-right: calc(((100vw - 1530px) / 2));
+  }
+}
+
+.content {
+  &__wrapper {
+    padding: 0 15px;
+  }
+  .block-button {
+    @media (max-width: $mobileSmall){
+      flex-wrap: wrap;
+      gap: 30px;
+    }
+    @media (max-width: $tablet){
+      margin-bottom: 40px;
+    }
+    display: flex;
+    justify-content: space-between;
+    gap: 30px;
+    margin-bottom: 85px;
+
+    &__link {
+    white-space: nowrap;
+    color: #6B97BB;
+    padding: calc(10px + (17.5 - 10) * ((100vw - 360px) / (1500 - 360))) calc(30px + (52.5 - 30) * ((100vw - 360px) / (1500 - 360)));
+    }
+  }
+  &__title {
+    margin-bottom: 40px;
+  }
+  &__description {
+    @media (max-width: $tablet){
+      max-width: 100%;
+      margin-bottom: 25px;
+    }
+    max-width: 400px;
+    font-weight: 300;
+    font-size: 18px;
+    line-height: 140%;
+    color: #40474E;
+  }
+  &__description p:first-child {
+    margin-bottom: 20px;
+  }
+}
+
+.block-button__slider-buttons {
+  @media (max-width: $mobile){
+    display: none;
+  }
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 15px;
+
+  .button-prev, .button-next {
+    box-sizing: border-box;
+    width: 54px;
+    height: 54px;
+    background: url(../img/icons_font/arrow_button_black.svg) no-repeat;
+    background-size: 26px 11px;
+    background-position: center;
+    border: 1px solid #98A4AE;
+  }
+  .button-next {
+    transform: rotate(180deg);
+  }
+  .button-prev:hover {
+    background: url(../img/icons_font/arrow_button_red.svg) no-repeat;
+    background-size: 26px 11px;
+    background-position: center;
+    transform: rotate(180deg);
+  }
+  .button-next:hover {
+    background: url(../img/icons_font/arrow_button_red.svg) no-repeat;
+    background-size: 26px 11px;
+    background-position: center;
+    transform: rotate(0deg);
+  }
+}
+
+.slider-projects {
+  @media (max-width: $mobile){
+    display: none;
+  }
+
+  &.swiper-container {
+    @media (max-width: $mobileSmall){
+      padding-left: 0;
+    }
+    @media (max-width: $tablet){
+      padding-left: 35vw;
+    }
+    @media (max-width: 1400px){
+      padding-left: 40vw;
+    }
+    position: absolute;
+    z-index: 5;
+    top: 63%;
+    width: 100%;
+    overflow: hidden;
+    padding-left: 50vw;
+    
+  }
+  &__slide.swiper-slide {
+    max-width: 327px;
+
+      img {
+      max-width: 100%;
+      object-fit: contain;
+    }
+  }
+}

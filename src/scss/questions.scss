@@ -1,0 +1,109 @@
+@use "sass:math";
+@import "calculation";
+@import "general";
+
+.questions {
+  &__wrapper {
+    padding: 120px 0;
+  }
+
+  &__body {
+    @media (min-width: 1470px){
+      padding-right: 62px;
+      padding-left: 668px;
+    }
+    padding-top: 96px;
+    padding-bottom: 89px;
+    padding-left: calc(0px + (668 - 0) * ((100vw - 360px) / (1470 - 360)));
+    padding-right: calc(0px + (62 - 0) * ((100vw - 360px) / (1470 - 360)));
+    background: url(../img/content_images/questions.png) no-repeat;
+  }
+}
+
+.form {
+  @media (min-width: 1470px){
+    padding: 77px 158px 104px 112px;
+  }
+  position: relative;
+  padding-top: calc(20px + (77 - 20) * ((100vw - 360px) / (1470 - 360)));
+  padding-right: calc(20px + (158 - 20) * ((100vw - 360px) / (1470 - 360)));
+  padding-bottom: calc(20px + (104 - 20) * ((100vw - 360px) / (1470 - 360)));
+  padding-left: calc(20px + (112 - 20) * ((100vw - 360px) / (1470 - 360)));
+  background: $whiteColor;
+
+  &::before {
+    @media (max-width: $mobile){
+      display: none;
+    }
+    @media (max-width: 850px){
+      left: -10px;
+    }
+    @media (max-width: 1250px){
+      left: 0;
+    }
+    position: absolute;
+    content: '';
+    width: 90%;
+    height: 100%;
+    top: 0;
+    left: 30px;
+    border: 1px solid #CFDAE3;
+    transform: rotate(15deg);
+  }
+  &__wrapper {
+    position: relative;
+  }
+  &__title {
+    margin-bottom: 16px;
+  }
+  &__subtitle {
+    @media (max-width: $mobile){
+      padding-right: 0;
+    }
+    @media (min-width: $pc){
+      padding-right: 80px;
+    }
+    font-weight: 300;
+    font-size: rem(18);
+    line-height: 140%;
+    margin-bottom: 30px;
+    padding-right: 100px;
+  }
+  &__input {
+    box-sizing: border-box;
+    border: 1px solid #CFDAE3;
+    padding: 13px 27px 13px 20px; 
+    width: 100%;
+    margin-bottom: 17px;
+    font-weight: 300;
+    font-size: rem(16);
+    line-height: 140%;
+    color: #98A4AE;
+  }
+  &__textarea {
+    @extend .form__input;
+    display: block;
+    resize: none;
+    margin-bottom: 16px;
+    height: 100px;
+  }
+  &__button {
+    padding: 20px 30px 17px 30px; 
+    line-height: 121.2%;
+    letter-spacing: 0.05em;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: rem(14);
+    font-weight: 400;
+    line-height: 115.7%;
+    text-transform: uppercase;
+  }
+  &__button::after {
+    font-size: 7px;
+  }
+  &__button::before {
+    display: none;
+  }
+}
